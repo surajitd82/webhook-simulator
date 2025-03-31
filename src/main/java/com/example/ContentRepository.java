@@ -5,14 +5,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ContentRepository {
-    /*public ContentRepository(List<String> repoList) {
-        if(repoList==null) {
-            repoList = new ArrayList<String>();
-            repolist = repoList;
-            System.out.println("Constructor Called..");
-        }
-    }*/
-
 
     public static void setRepoList(List<String> repoList) {
         ContentRepository.repoList = repoList;
