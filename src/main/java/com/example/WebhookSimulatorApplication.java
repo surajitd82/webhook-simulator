@@ -29,14 +29,13 @@ public WebServerFactoryCustomizer<TomcatServletWebServerFactory> servletContaine
             connector.setPort(9443);
             connector.setProperty("keyAlias", "myalias");
             connector.setProperty("keystorePass", "netapp1!");
-            connector.setProperty("keystoreFile", "/Users/surajitd/Project/MyWork/webhook-simulator/keystore.jks");
+            connector.setProperty("keystoreFile", "%Path_of keystore.jks%");
             connector.setProperty("clientAuth", "false");
             connector.setProperty("sslProtocol", "TLS");
             connector.setProperty("SSLEnabled", "true");
             connector.setProperty("enableLookups", "true");
             connector.setProperty("useIPVHosts", "true");
-//            connector.setProperty("address", "49.43.242.161");
-//            connector.setProperty("defaultSSLHostConfigName", "_default_");
+
             SSLHostConfig sslHostConfig = new SSLHostConfig();
 //            sslHostConfig.setHostName( "_default_");
 //            sslHostConfig.setProtocols("TLSv1.2");
@@ -44,7 +43,7 @@ public WebServerFactoryCustomizer<TomcatServletWebServerFactory> servletContaine
     };
 }
 
-
+//Not used. Hence not using keystore.p12 and application.properties
 /*@Bean
 public WebServerFactoryCustomizer<TomcatServletWebServerFactory> servletContainerCustomizer() {
     return factory -> {
@@ -64,7 +63,6 @@ public WebServerFactoryCustomizer<TomcatServletWebServerFactory> servletContaine
 @RequestMapping("/webhook")
 class WebhookController {
 
-//    ContentRepository contentRepository = new ContentRepository();
     @PostMapping
     @ResponseStatus(HttpStatus.OK)
     public void handleWebhook(@RequestBody String payload) {
@@ -87,27 +85,12 @@ class WebhookController {
     public String getRecentWebhook() {
         List<String> responses = ContentRepository.getRepoList();
         if(responses==null || responses.size()==0){
-            return getnoWebhook();
+           return "{}";
         } else {
             System.out.println("Last Webhook: " + responses.get(responses.size() - 1));
             return responses.get(responses.size() - 1);
         }
     }
-
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    public String getnoWebhook() {
-        return "{}";
-    }
 }
-   /* @Configuration
-    @EnableWebSecurity
-    public static class SecurityConfig extends WebSecurityConfigurerAdapter {
-        @Override
-        protected void configure(HttpSecurity http) throws Exception {
-            http
-                    .requiresChannel()
-                    .anyRequest()
-                    .requiresSecure();
-        }
-    }*/
+
 }
