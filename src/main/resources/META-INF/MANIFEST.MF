@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Main-Class: com.example.WebhookSimulatorApplication
+Class-Path: spring-web-6.2.0.jar spring-boot-starter-3.4.0.jar tomcat-em
+ bed-el-10.1.33.jar spring-boot-starter-json-3.4.0.jar logback-core-1.5.
+ 12.jar spring-core-6.2.0.jar spring-aop-6.2.0.jar jakarta.annotation-ap
+ i-2.1.1.jar tomcat-embed-core-10.1.33.jar jul-to-slf4j-2.0.16.jar micro
+ meter-observation-1.14.0.jar spring-boot-starter-web-3.4.0.jar tomcat-e
+ mbed-websocket-10.1.33.jar log4j-to-slf4j-2.24.1.jar spring-boot-starte
+ r-tomcat-3.4.0.jar spring-boot-3.4.0.jar jackson-annotations-2.18.1.jar
+  spring-boot-autoconfigure-3.4.0.jar snakeyaml-2.3.jar jackson-datatype
+ -jsr310-2.18.1.jar spring-expression-6.2.0.jar spring-webmvc-6.2.0.jar 
+ jackson-datatype-jdk8-2.18.1.jar jackson-databind-2.18.1.jar jackson-co
+ re-2.18.1.jar spring-beans-6.2.0.jar spring-jcl-6.2.0.jar slf4j-api-2.0
+ .15.jar micrometer-commons-1.14.0.jar jackson-module-parameter-names-2.
+ 18.1.jar spring-boot-starter-logging-3.4.0.jar logback-classic-1.5.12.j
+ ar log4j-api-2.24.1.jar spring-context-6.2.0.jar
+
